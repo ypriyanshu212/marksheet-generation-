@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-in</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="log-container">
+        <form action="" class="form-bgcolor">
+            <div class="content">
+                <h1>Login form</h1>
+                <div class="btn-s">
+                    <button id="login-btn">Login</button>
+                    <button><a href="./signup.html" target="_blank">Signup</a></button>
+                </div>
+                <div class="login-form">
+                    <input type="email" placeholder="Email" id="email">
+                    <div class="pass-show">
+                        <input type="password" placeholder="Password" id="pass">
+                        <i class="fa fa-eye-slash fa-3x" aria-hidden="true" id="pass-show" onclick="show_btn()"></i>
+                        <i class="fa fa-eye fa-3x" aria-hidden="true"  id="pass-hide" onclick="show_btn()" style="display: none;"></i>
+                    </div>
+                    <a href="#">Forgot password?</a>
+                    <button class="login-btn" onclick="login()">Login</button>
+                    <p>Not a member? <a href="./signup.html" target="_blank">Signup now</a></a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

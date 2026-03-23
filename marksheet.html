@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet Entry</title>
+    <link rel="stylesheet" href="marksheet.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Generate marksheet</h1>
+        <div class="box">
+            <input type="text" placeholder="Student Name" id="sname"><br>
+            <input type="text" placeholder="Roll Number" id="srol"><br>
+            <input type="text" placeholder="Enrrollment No." id="seroll"><br>
+            <input type="number" id="DBMS" placeholder="DBMS Marks"><br>
+            <input type="number" id="Web"placeholder="Web Technology Marks"><br>
+            <input type="number" id="Machine"placeholder="Machine Learing Marks"><br>
+            <input type="number" id="Java"placeholder="Java ScriptMarks"><br>
+            <input type="number" id="Computer"placeholder="Computer Vision Marks"><br>
+            <button onclick="percentage()">Submit</button>
+        </div>
+    </div>
+    <script>
+    function percentage() {
+        let sname = document.getElementById('sname').value;
+        let srol = document.getElementById('srol').value;
+        let senroll = document.getElementById('seroll').value;
+
+        let DBMS = Number(document.getElementById('DBMS').value);
+        let Web = Number(document.getElementById('Web').value);
+        let Machine = Number(document.getElementById('Machine').value);
+        let Java = Number(document.getElementById('Java').value);
+        let Computer = Number(document.getElementById('Computer').value);
+
+        // validation
+        if (!sname || !srol || !senroll || !DBMS || !Web || !Machine || !Java || !Computer) {
+            alert("Please enter all marks");
+            return;
+        }
+
+        let add = DBMS + Web + Machine + Java + Computer;
+        let per = (add / 500) * 100;
+
+        let marks = {
+            sname,
+            srol,
+            senroll,
+            DBMS,
+            Web,
+            Machine,
+            Java,
+            Computer,
+            total: add,
+            percentage: per.toFixed(2)
+        };
+
+        let student = JSON.parse(localStorage.getItem('student')) || [];
+        student.push(marks);
+
+        localStorage.setItem('student', JSON.stringify(student));
+
+        alert(per +"%");
+        window.location.href = "./result.html";
+    }
+</script>
+</body>
+
+</html>

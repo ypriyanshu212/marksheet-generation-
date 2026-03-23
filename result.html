@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="result.css">
+</head>
+
+<body>
+    <!-- <div class="container">
+        <h1>student detail</h1>
+        <div id="student">
+
+        </div>
+    </div> -->
+    <!-- chatgpt -->
+     <div class="container">
+        <h1>Marksheet</h1>
+
+        <!-- Data will come here from JS -->
+        <div id="student"></div>
+    </div>
+    <!-- <script>
+        let students = JSON.parse(localStorage.getItem('student')) || []
+        document.getElementById('student').innerHTML =
+        students.map(i=>(
+            <div class="student_container">
+                <h2>${hindi}</h2>
+                <h2>${english}</h2>
+                <h2>${maths}</h2>
+                <h2>${science}</h2>
+                <h2>${Social_Science}</h2>
+            </div>
+        )).join("")
+    </script> -->
+    <script>
+        // let students = JSON.parse(localStorage.getItem('student')) || [];
+
+        // document.getElementById('student').innerHTML =
+        //     students.map(i => `
+        //         <div class="student_container">
+        //             <h2>Hindi: ${i.hindi}</h2>
+        //             <h2>English: ${i.english}</h2>
+        //             <h2>Maths: ${i.maths}</h2>
+        //             <h2>Science: ${i.science}</h2>
+        //             <h2>Social Science: ${i.social_science}</h2>
+        //             <h2>Total: ${i.total}</h2>
+        //             <h2>Percentage: ${i.percentage}%</h2>
+        //         </div>
+        //     `).join("");
+        // this is my project 
+
+//         let students = JSON.parse(localStorage.getItem('student')) || [];
+
+//         let lastStudent = students[students.length - 1];
+//         document.getElementById('student').innerHTML = `
+//     <div class="student_container">
+//         <h2>student name: ${lastStudent.sname}</h2>
+//         <h2>Roll number: ${lastStudent.srol}</h2>
+//         <h2>Enrollment No.: ${lastStudent.senroll}</h2>
+//         <h2>DBMS: ${lastStudent.DBMS}</h2>
+//         <h2>Web technology: ${lastStudent.Web}</h2>
+//         <h2>Machine Learing: ${lastStudent.Machine}</h2>
+//         <h2>Java Script: ${lastStudent.Java}</h2>
+//         <h2>Computer Vision: ${lastStudent.Computer}</h2>
+//         <h2>Total: ${lastStudent.total}</h2>
+//         <h2>Percentage: ${lastStudent.percentage}%</h2>
+//     </div>
+// `; 
+
+// chatgpt
+ let students = JSON.parse(localStorage.getItem('student')) || [];
+
+        // safety check
+        if (students.length === 0) {
+            document.getElementById('student').innerHTML = "<h2>No data found</h2>";
+        } else {
+            let lastStudent = students[students.length - 1];
+
+            document.getElementById('student').innerHTML = `
+                <div class="student_container">
+                    
+                    <!-- Student Info -->
+                    <div class="student-info">
+                        <h2><strong>Name:</strong> ${lastStudent.sname}</h2>
+                        <h2><strong>Roll No:</strong> ${lastStudent.srol}</h2>
+                        <h2><strong>Enrollment No:</strong> ${lastStudent.senroll}</h2>
+                    </div>
+
+                    <!-- Marks Table -->
+                    <table class="marks-table">
+                        <tr>
+                            <th>Subject</th>
+                            <th>Marks</th>
+                        </tr>
+                        <tr>
+                            <td>DBMS</td>
+                            <td>${lastStudent.DBMS}</td>
+                        </tr>
+                        <tr>
+                            <td>Web Technology</td>
+                            <td>${lastStudent.Web}</td>
+                        </tr>
+                        <tr>
+                            <td>Machine Learning</td>
+                            <td>${lastStudent.Machine}</td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript</td>
+                            <td>${lastStudent.Java}</td>
+                        </tr>
+                        <tr>
+                            <td>Computer Vision</td>
+                            <td>${lastStudent.Computer}</td>
+                        </tr>
+                    </table>
+
+                    <!-- Result Summary -->
+                    <div class="result-summary">
+                        <h2><strong>Total:</strong> ${lastStudent.total}</h2>
+                        <h2><strong>Percentage:</strong> ${lastStudent.percentage}%</h2>
+                    </div>
+
+                </div>
+            `;
+        }
+    </script>
+</body>
+
+</html>

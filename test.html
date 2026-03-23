@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- login section  -->
+    <div class="login-container" id="login-btn">
+        <form action="" class="form-bgcolor">
+            <div class="login-content">
+                <h1>Login form</h1>
+                <div class="btn-s">
+                    <button type="button" id="login-form">Login</button>
+                    <button type="button" onclick="showSignup()" id="signup-form">Signup</button>
+                </div>
+                <div class="login-form">
+                    <!-- <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <a href="#" class="sign-a">Forgot password?</a>
+                    <button class="login-btn">Login</button> -->
+                    <input type="email" placeholder="Email" id="Lemail">
+                    <div class="pass-show">
+                        <input type="password" placeholder="Password" id="pass">
+                        <i class="fa fa-eye-slash fa-2x" aria-hidden="true" id="pass-show" onclick="show_btn()"></i>
+                        <i class="fa fa-eye fa-2x" aria-hidden="true" id="pass-hide" onclick="show_btn()"
+                            style="display: none;"></i>
+                    </div>
+                    <a href="#" class="for-sign-link">Forgot password?</a>
+                    <button type="button" class="login-btn" onclick="login()">Login</button>
+                    <p>Not a member? <a href="#" onclick="showSignup()" class="for-sign-link">Signup now</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- signup section -->
+    <div class="signup-container" id="signup-btn">
+        <form action="" class="form-bgcolor">
+            <div class="signup-content">
+                <h1>Signup form</h1>
+                <div class="btn-s">
+                    <button type="button" onclick="showLogin()">Login</button>
+                    <button type="button" style="background-color: black; color:white;">Signup</button>
+                </div>
+                <div class="signup-form">
+                    <!-- <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <input type="password" placeholder="confirm-Password">
+                    <a href="#">Forgot password?</a>
+                    <button class="signup-btn">Login</button> -->
+                    <input type="text" placeholder="Name" id="Sname">
+                    <input type="tel" placeholder="Mobile Number" id="Snum" required maxlength="10"
+                        oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+                    <input type="email" placeholder="Email" id="Semail">
+                    <input type="text" placeholder="Password" id="Spass">
+                    <!-- <div class="pass-show">
+                        <input type="password" placeholder="Password" id="Spass">
+                        <i class="fa fa-eye-slash fa-3x" aria-hidden="true" id="pass-show" onclick="show_btn()"></i>
+                        <i class="fa fa-eye fa-3x" aria-hidden="true" id="pass-hide" onclick="show_btn()"
+                            style="display: none;"></i>
+                    </div> -->
+                    <!-- <a href="#">Forgot password?</a> -->
+                    <button type="button" class="signup-btn" onclick="signup()">Sign-up</button>
+                    <p>Already have an accout? <a href="./signup.html" target="_blank">Login</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function showSignup() {
+            document.getElementById("login-btn").style.display = "none";
+            document.getElementById("signup-btn").style.display = "flex";
+        }
+        function showLogin() {
+            document.getElementById("login-btn").style.display = "flex";
+            document.getElementById("signup-btn").style.display = "none";
+        }
+    </script>
+        <script src="./login.js"></script>
+    <script src="./signup.js"></script>
+</body>
+
+</html>

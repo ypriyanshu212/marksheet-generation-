@@ -1,0 +1,141 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+}
+.signup-container{
+    display: none;
+}
+.login-container{
+    display: flex;
+}
+
+/* Login & Signup Container */
+.login-container,
+.signup-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+}
+
+/* Hide signup initially */
+#signup-btn {
+    display: none;
+}
+
+/* Form Box */
+.form-bgcolor {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 64px 65px, rgba(0, 0, 0, 0.12) 0px -22px 40px, rgba(0, 0, 0, 0.12) 0px 14px 16px, rgba(0, 0, 0, 0.17) 0px 22px 23px, rgba(0, 0, 0, 0.09) 0px -13px 15px;
+    border-radius: 30px;
+    background-color: white;
+    width: 400px;
+    max-width: 90%;
+    padding: 2rem;
+}
+
+/* Content alignment */
+.login-content,
+.signup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.login-content h1,
+.signup-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem; 
+}
+#login-form{
+    color: white;
+    background-color: black;
+}
+/* Buttons (Login/Signup switch) */
+.btn-s {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+#signup{
+    background-color: black;
+    color: white;
+}
+.btn-s button {
+    width: 150px;
+    height: 45px;
+    border-radius: 8px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Forms */
+.login-form,
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Inputs */
+.login-form input,
+.signup-form input {
+    width: 90%;
+    height: 45px;
+    margin: 10px 0;
+    font-size: 1rem;
+    padding-left: 10px;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+/* Buttons */
+.login-btn,
+.signup-btn {
+    width: 90%;
+    height: 45px;
+    margin-top: 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color:#4caf50;
+    cursor: pointer;
+}
+
+/* Text & links */
+.login-form p,
+.signup-form p {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.for-sign-link {
+    cursor: pointer;
+    text-decoration: underline;
+    color: black;
+}
+
+/* Password field */
+.pass-show {
+    position: relative;
+    width: 90%;
+}
+
+.pass-show input {
+    width: 100%;
+}
+
+.pass-show i {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    cursor: pointer;
+}
